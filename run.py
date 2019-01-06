@@ -22,9 +22,9 @@ def main():
     message.spinning_cursor()
     message.print_line('\r1. Paste course url or\n' +
     '2. Press enter for Bulk Download')
-    
+
     url = input()
-    
+
     print('')
     start_time = time.time() #start time counter begins
     if url == "":
@@ -46,7 +46,7 @@ def main():
 
 def schedule_download(url):
     ''' Look for the scheduled time in settings.json '''
-    
+
     if not read.aria2_installed:
         tip = '☝🏻  Tip: Install aria2c for faster downloads, read README.md to learn more.'
         message.carriage_return_animate(tip)
@@ -70,7 +70,7 @@ def schedule_download(url):
 
 def download_course(url):
     ''' download course '''
-    
+
     # Check for a valid url
     if url.find('.html') == -1:
         sys.exit(message.animate_characters(Fore.LIGHTRED_EX, draw.ANONYMOUS, 0.02))
@@ -82,7 +82,7 @@ def download_course(url):
     course_folder_path = save.course_path(url, lynda_folder_path)
     desktop_folder_path = install.get_path("Desktop")
     download_folder_path = install.get_path("Downloads")
-    
+
     # Read preferences
     use_cookie_for_download = read.course_download_pref
 
@@ -137,5 +137,5 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         sys.exit(message.colored_message(Fore.LIGHTRED_EX, "\n- Program Interrupted!!\n"))
- 
-    
+
+

@@ -230,7 +230,7 @@ def contentmd(url):
             try:
                 video_name = u"{} - {}".format(str(video_count).zfill(2), video.text.strip())
                 if read.markdown_links:
-                    video_markdown = "\n* [" + video_name + "](" + chapter + "/" + video_name + ".mp4)"
+                    video_markdown = "\n* [ ] [" + video_name + "](" + chapter + "/" + video_name + ".mp4)"
                 else:
                     video_markdown = "\n* " + video_name
                 content_md.writelines(video_markdown)
